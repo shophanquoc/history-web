@@ -57,7 +57,8 @@ export default function SlideCard() {
 
     return ( <
         div style = {
-            { overflow: "hidden", margin: 15 } }
+            { overflow: "hidden", margin: 15 }
+        }
         onTouchStart = { handleTouchStart }
         onTouchMove = { handleTouchMove }
         onTouchEnd = { handleTouchEnd } >
@@ -68,24 +69,24 @@ export default function SlideCard() {
                 transform: `translateX(-${index * 100}%)`,
                 transition: "0.4s ease"
             }
-        } >
-        {
+        } > {
             data.map((item, i) => ( <
                 div key = { i }
                 style = {
-                    { minWidth: "100%" } } >
+                    { minWidth: "100%" }
+                } >
                 <
                 div className = "card-modern" >
                 <
                 img src = { item.img }
                 className = "img-cover" / >
                 <
-                div className = "title" > { item.title } < /div> <
-                /div> <
+                div className = "title" > { item.title } < /div> < /
+                div > <
                 /div>
             ))
         } <
-        /div> <
-        /div>
+        /div> < /
+        div >
     );
 }

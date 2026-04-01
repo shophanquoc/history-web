@@ -35,6 +35,7 @@ export default function Detail() {
 
         <
         img src = "https://picsum.photos/400/300"
+        alt = ""
         style = {
             {
                 width: "100%",
