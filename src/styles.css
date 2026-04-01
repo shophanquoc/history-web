@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+}
+
+
+/* HERO GRID BACKGROUND */
+
+.hero-bg {
+    background-image: linear-gradient(#eaeaea 1px, transparent 1px), linear-gradient(90deg, #eaeaea 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+
+/* TITLE */
+
+.title-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.title-highlight {
+    color: #d32f2f;
+}
+
+
+/* BUTTON */
+
+.btn-primary {
+    background: #d50000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* CARD */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}

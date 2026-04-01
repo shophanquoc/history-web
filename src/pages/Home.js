@@ -1,34 +1,17 @@
-import { useEffect, useState } from "react";
-import { db } from "../services/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Stats from "../components/Stats";
 
 export default function Home() {
-    const [articles, setArticles] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async() => {
-            const querySnapshot = await getDocs(collection(db, "articles"));
-            const data = querySnapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setArticles(data);
-        };
-        fetchData();
-    }, []);
-
     return ( <
         div >
         <
-        h2 > Bài viết < /h2> {
-            articles.map(a => ( <
-                div key = { a.id } >
-                <
-                h3 > { a.title } < /h3> <
-                p > { a.content } < /p> <
-                /div>
-            ))
-        } <
+        Header / >
+        <
+        Hero / >
+        <
+        Stats / >
+        <
         /div>
     );
 }
