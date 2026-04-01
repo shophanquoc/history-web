@@ -173,3 +173,11 @@ html {
 * {
     -webkit-tap-highlight-color: transparent;
 }
+
+.card-modern {
+    transition: transform 0.2s;
+}
+
+.card-modern:active {
+    transform: scale(0.97);
+}

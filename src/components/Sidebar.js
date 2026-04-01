@@ -1,18 +1,25 @@
 import "../styles.css";
+import { useNavigate } from "react-router-dom";
+
 export default function Sidebar({ open, setOpen, onLoginClick }) {
+    const navigate = useNavigate();
+
+    const goHome = () => {
+        navigate("/");
+        setOpen(false);
+    };
+
     return ( <
-        >
-        {
+        > { /* OVERLAY */ } {
             open && ( <
                 div className = "overlay"
                 onClick = {
-                    () => setOpen(false)
-                }
+                    () => setOpen(false) }
                 />
             )
         }
 
-        <
+        { /* SIDEBAR */ } <
         div style = {
             {
                 position: "fixed",
@@ -28,29 +35,53 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
                 transition: "transform 0.3s ease"
             }
         } >
+        { /* HEADER SIDEBAR */ } <
+        div style = {
+            {
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center"
+            }
+        } >
         <
-        h3 > 📂Menu < /h3>
+        b > Menu < /b>
 
-        <
-        p style = {
-            { padding: "10px 0" }
-        } > 🏠Trang chủ < /p> <
-        p style = {
-            { padding: "10px 0" }
-        } > 📜Lịch sử < /p> <
-        p style = {
-            { padding: "10px 0" }
-        } > ⭐Sự kiện < /p>
+        { /* NÚT ĐÓNG */ } <
+        button onClick = {
+            () => setOpen(false) } > ✕ < /button> <
+        /div>
 
         <
         hr / >
 
+        { /* MENU */ } <
+        p onClick = { goHome }
+        style = {
+            { padding: "10px 0", cursor: "pointer" } } > 🏠Trang chủ <
+        /p>
 
         <
         p style = {
-            { padding: "10px 0", cursor: "pointer" }
-        }
-        onClick = { onLoginClick } > 🔐Admin Login < /p>    < /
-        div > < / >
+            { padding: "10px 0" } } > 📜Lịch sử <
+        /p>
+
+        <
+        p style = {
+            { padding: "10px 0" } } > ⭐Sự kiện <
+        /p>
+
+        <
+        hr / >
+
+        <
+        p onClick = {
+            () => {
+                setOpen(false);
+                onLoginClick();
+            }
+        } > 🔐Đăng nhập Admin <
+        /p> <
+        /div> <
+        />
     );
 }

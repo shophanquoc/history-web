@@ -2,7 +2,7 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 import LoginModal from "./LoginModal";
 
-export default function Header({ setKeyword }) {
+export default function Header({ setKeyword = () => {} }) {
     const [open, setOpen] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
@@ -13,7 +13,8 @@ export default function Header({ setKeyword }) {
         Sidebar open = { open }
         setOpen = { setOpen }
         onLoginClick = {
-            () => setShowLogin(true) }
+            () => setShowLogin(true)
+        }
         />
 
         <
@@ -36,25 +37,29 @@ export default function Header({ setKeyword }) {
         } >
         <
         button onClick = {
-            () => setOpen(true) } > ☰ < /button>
+            () => setOpen(true)
+        } > ☰ < /button>
 
         <
         b > Lữ đoàn 604 < /b>
 
         <
         button onClick = {
-            () => setShowSearch(!showSearch) } > 🔍
+            () => setShowSearch(!showSearch)
+        } > 🔍
         <
-        /button> <
-        /div>
+        /button> < /
+        div >
 
         {
             showSearch && ( <
                 input placeholder = "Tìm kiếm..."
                 onChange = {
-                    (e) => setKeyword(e.target.value) }
+                    (e) => setKeyword(e.target.value)
+                }
                 style = {
-                    { width: "100%", marginTop: 10 } }
+                    { width: "100%", marginTop: 10 }
+                }
                 />
             )
         } <
@@ -64,8 +69,9 @@ export default function Header({ setKeyword }) {
         LoginModal open = { showLogin }
         setOpen = { setShowLogin }
         onLogin = {
-            () => window.location.href = "/admin" }
-        /> <
-        />
+            () => window.location.href = "/admin"
+        }
+        /> < /
+        >
     );
 }
