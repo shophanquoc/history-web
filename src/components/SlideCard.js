@@ -46,14 +46,18 @@ export default function SlideCard() {
         }
     };
 
-    // AUTO SLIDE
     useEffect(() => {
+        if (!data || data.length === 0) return;
+
         const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % data.length);
+            setIndex((prev) => {
+                const next = prev + 1;
+                return next >= data.length ? 0 : next;
+            });
         }, 4000);
 
         return () => clearInterval(interval);
-    }, []);
+    }, [data]);
 
     return ( <
         div style = {
