@@ -14,33 +14,38 @@ export default function LeaderList() {
     ];
 
     return ( <
-        div style = {
-            { padding: 15 } } >
+        div >
+
         <
-        h3 > Thủ trưởng qua các thời kỳ < /h3>
-
-        {
-            leaders.map((l, i) => ( <
-                div key = { i }
-                className = "card-modern"
-                style = {
-                    { display: "flex", gap: 10 } } >
-                <
-                img src = { l.img }
-                style = {
-                    { width: 60, height: 60, borderRadius: "50%" } }
-                />
-
-                <
-                div >
-                <
-                b > { l.name } < /b> <
-                p > { l.role } < /p> <
-                p > { l.time } < /p> <
-                /div> <
-                /div>
-            ))
-        } <
         /div>
+        // <
+        // div style = {
+        //     { padding: 15 } } >
+        // <
+        // h3 > Thủ trưởng qua các thời kỳ < /h3>
+
+        // {
+        //     leaders.map((l, i) => ( <
+        //         div key = { i }
+        //         className = "card-modern"
+        //         style = {
+        //             { display: "flex", gap: 10 } } >
+        //         <
+        //         img src = { l.img }
+        //         style = {
+        //             { width: 60, height: 60, borderRadius: "50%" } }
+        //         />
+
+        //         <
+        //         div >
+        //         <
+        //         b > { l.name } < /b> <
+        //         p > { l.role } < /p> <
+        //         p > { l.time } < /p> <
+        //         /div> <
+        //         /div>
+        //     ))
+        // } <
+        // /div>
     );
 }
