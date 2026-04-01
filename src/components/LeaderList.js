@@ -1,17 +1,17 @@
 export default function LeaderList() {
-    const leaders = [{
-            role: "Chính ủy",
-            name: "Nguyễn Văn A",
-            time: "1975 - 1980",
-            img: "https://picsum.photos/100"
-        },
-        {
-            role: "Lữ đoàn trưởng",
-            name: "Trần Văn B",
-            time: "1980 - 1990",
-            img: "https://picsum.photos/101"
-        }
-    ];
+    // const leaders = [{
+    //         role: "Chính ủy",
+    //         name: "Nguyễn Văn A",
+    //         time: "1975 - 1980",
+    //         img: "https://picsum.photos/100"
+    //     },
+    //     {
+    //         role: "Lữ đoàn trưởng",
+    //         name: "Trần Văn B",
+    //         time: "1980 - 1990",
+    //         img: "https://picsum.photos/101"
+    //     }
+    // ];
 
     return ( <
         div >
