@@ -21,14 +21,16 @@ export default function Detail() {
 
         { /* NỘI DUNG */ } <
         div style = {
-            { padding: 15 } } >
+            { padding: 15 }
+        } >
 
         <
         h2 > Bài viết { id } < /h2>
 
         <
         p style = {
-            { color: "#777", fontSize: 13 } } > 📅01 / 04 / 2026 <
+            { color: "#777", fontSize: 13 }
+        } > 📅01 / 04 / 2026 <
         /p>
 
         <
@@ -52,7 +54,8 @@ export default function Detail() {
 
         { /* GỢI Ý BÀI VIẾT */ } <
         div style = {
-            { padding: 15 } } >
+            { padding: 15 }
+        } >
 
         <
         h3 > 📚Bài viết liên quan < /h3>
@@ -62,10 +65,11 @@ export default function Detail() {
                 div key = { r.id }
                 className = "card-modern"
                 style = {
-                    { padding: 10, marginBottom: 10 } }
+                    { padding: 10, marginBottom: 10 }
+                }
                 onClick = {
-                    () => navigate(`/post/${r.id}`) } >
-                { r.title } <
+                    () => navigate(`/post/${r.id}`)
+                } > { r.title } <
                 /div>
             ))
         }

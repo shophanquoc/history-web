@@ -71,7 +71,6 @@ export default function Header({ setKeyword = () => {} }) {
         onLogin = {
             () => window.location.href = "/admin"
         }
-        /> < /
-        >
+        /> < / >
     );
 }

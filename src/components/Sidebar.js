@@ -1,7 +1,7 @@
 import "../styles.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Sidebar({ open, setOpen, onLoginClick }) {
+export default function Sidebar({ open, setOpen, onLoginClick = () => {} }) {
     const navigate = useNavigate();
 
     const goHome = () => {
@@ -10,11 +10,13 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
     };
 
     return ( <
-        > { /* OVERLAY */ } {
+        >
+        { /* OVERLAY */ } {
             open && ( <
                 div className = "overlay"
                 onClick = {
-                    () => setOpen(false) }
+                    () => setOpen(false)
+                }
                 />
             )
         }
@@ -34,8 +36,7 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
                 transform: open ? "translateX(0)" : "translateX(-100%)",
                 transition: "transform 0.3s ease"
             }
-        } >
-        { /* HEADER SIDEBAR */ } <
+        } > { /* HEADER SIDEBAR */ } <
         div style = {
             {
                 display: "flex",
@@ -48,8 +49,9 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
 
         { /* NÚT ĐÓNG */ } <
         button onClick = {
-            () => setOpen(false) } > ✕ < /button> <
-        /div>
+            () => setOpen(false)
+        } > ✕ < /button> < /
+        div >
 
         <
         hr / >
@@ -57,17 +59,20 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
         { /* MENU */ } <
         p onClick = { goHome }
         style = {
-            { padding: "10px 0", cursor: "pointer" } } > 🏠Trang chủ <
+            { padding: "10px 0", cursor: "pointer" }
+        } > 🏠Trang chủ <
         /p>
 
         <
         p style = {
-            { padding: "10px 0" } } > 📜Lịch sử <
+            { padding: "10px 0" }
+        } > 📜Lịch sử <
         /p>
 
         <
         p style = {
-            { padding: "10px 0" } } > ⭐Sự kiện <
+            { padding: "10px 0" }
+        } > ⭐Sự kiện <
         /p>
 
         <
@@ -80,8 +85,8 @@ export default function Sidebar({ open, setOpen, onLoginClick }) {
                 onLoginClick();
             }
         } > 🔐Đăng nhập Admin <
-        /p> <
-        /div> <
+        /p> < /
+        div > <
         />
     );
 }
