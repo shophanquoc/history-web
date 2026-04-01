@@ -1,31 +1,71 @@
 import { useState } from "react";
+import Sidebar from "./Sidebar";
+import LoginModal from "./LoginModal";
 
-export default function Header() {
-    const [dark, setDark] = useState(false);
+export default function Header({ setKeyword }) {
+    const [open, setOpen] = useState(false);
+    const [showSearch, setShowSearch] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
 
     return ( <
+        >
+        <
+        Sidebar open = { open }
+        setOpen = { setOpen }
+        onLoginClick = {
+            () => setShowLogin(true) }
+        />
+
+        <
+        div style = {
+            {
+                padding: 15,
+                background: "#fff",
+                position: "sticky",
+                top: 0,
+                zIndex: 100
+            }
+        } >
+
+        <
         div style = {
             {
                 display: "flex",
-                justifyContent: "space-between",
-                padding: "15px 20px",
-                background: "#fff",
-                borderBottom: "1px solid #eee"
+                justifyContent: "space-between"
             }
         } >
         <
-        div style = {
-            { fontWeight: "bold" } } > 🛡️LỮ ĐOÀN 604 <
+        button onClick = {
+            () => setOpen(true) } > ☰ < /button>
+
+        <
+        b > Lữ đoàn 604 < /b>
+
+        <
+        button onClick = {
+            () => setShowSearch(!showSearch) } > 🔍
+        <
+        /button> <
+        /div>
+
+        {
+            showSearch && ( <
+                input placeholder = "Tìm kiếm..."
+                onChange = {
+                    (e) => setKeyword(e.target.value) }
+                style = {
+                    { width: "100%", marginTop: 10 } }
+                />
+            )
+        } <
         /div>
 
         <
-        div >
-        <
-        button onClick = {
-            () => setDark(!dark) } > 🌙
-        <
-        /button> <
-        /div> <
-        /div>
+        LoginModal open = { showLogin }
+        setOpen = { setShowLogin }
+        onLogin = {
+            () => window.location.href = "/admin" }
+        /> <
+        />
     );
 }
