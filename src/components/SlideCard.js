@@ -46,6 +46,7 @@ export default function SlideCard() {
         }
     };
 
+    // AUTO SLIDE
     useEffect(() => {
         if (!data || data.length === 0) return;
 
@@ -57,7 +58,7 @@ export default function SlideCard() {
         }, 4000);
 
         return () => clearInterval(interval);
-    }, [data]);
+    }, [data.length]);
 
     return ( <
         div style = {
@@ -83,6 +84,7 @@ export default function SlideCard() {
                 div className = "card-modern" >
                 <
                 img src = { item.img }
+                alt = { item.title }
                 className = "img-cover" / >
                 <
                 div className = "title" > { item.title } < /div> < /
