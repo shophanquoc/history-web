@@ -28,10 +28,12 @@ export default function ArticleList({ keyword }) {
 
                 <
                 img src = { a.img }
-                className = "img-cover" / >
-                <
+                className = "img-cover"
+                alt = { a.title }
+                /> <
                 div style = {
-                    { fontSize: 12, color: "#777" } } > 📅01 / 04 / 2026 <
+                    { fontSize: 12, color: "#777" }
+                } > 📅01 / 04 / 2026 <
                 /div> <
                 div style = {
                     { padding: 10 }
